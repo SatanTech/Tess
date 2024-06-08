@@ -1,8 +1,10 @@
 #!/bin/bash
-echo -e  "${tyblue}┌──────────────────────────────────────────┐${NC}"
-echo -e  "${tyblue}│              MASUKKAN NAMA KAMU          │${NC}"
-echo -e  "${tyblue}└──────────────────────────────────────────┘${NC}"
-echo " "
-until [[ $name =~ ^[a-zA-Z0-9_.-]+$ ]]; do
-read -rp "Masukan Nama Kamu Disini tanpa spasi : " -e name
-done
+sysctl -w net.ipv6.conf.all.disable_ipv6=1 >/dev/null 2>&1
+sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
+./tools.sh
+clear
+start=$(date +%s)
+ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+apt install git curl -y >/dev/null 2>&1
+apt install python -y >/dev/null 2>&1
+clear
